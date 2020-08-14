@@ -1,0 +1,2 @@
+rootProject.name='PComplect'
+include ':app'
