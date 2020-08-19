@@ -20,9 +20,9 @@ import java.io.OutputStreamWriter;
 import static android.content.Context.MODE_PRIVATE;
 
 class Save_json {
-    public void writeFile(JSONArray listView, Context context) {
+    public void writeFile(JSONArray listView, Context context, String file_name) {
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput("name", MODE_PRIVATE)));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(file_name, MODE_PRIVATE)));
             bw.write(listView.toJSONString());
             bw.close();
             System.out.println("zalypa zapisalas");
@@ -31,9 +31,10 @@ class Save_json {
             e.printStackTrace();
         }
     }
-    private static String convertStreamToString(InputStream is) {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+    private static String convertStreamToString(InputStreamReader is) {
+
+        BufferedReader reader = new BufferedReader(is);
         StringBuilder sb = new StringBuilder();
 
         String line = null;
@@ -56,28 +57,18 @@ class Save_json {
     public String getAssetsfile(String file_name, Activity activity) throws IOException {
         AssetManager am = activity.getAssets();
         InputStream is = am.open(file_name);
-        String s = convertStreamToString(is);
+        String s = convertStreamToString(new InputStreamReader(is));
         is.close();
         System.out.println(s);
         return s;
     }
-    public JSONArray readFile(Context context, String text_assets)
-    {
-        String test1;
+
+    public JSONArray readFile(Context context, String file_name) {
         JSONArray jsonstr = new JSONArray();
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(context.openFileInput("name")));
-            String str = "";
-            StringBuilder strall = new StringBuilder("");
-
-            while ((str = br.readLine()) != null)
-            {
-                strall.append(str);
-            }
-            jsonstr = (JSONArray)  new JSONParser().parse(strall.toString());
-        }
-        catch (FileNotFoundException e) {e.printStackTrace(); }
-        catch (IOException e) {e.printStackTrace(); } catch (ParseException e) {
+            jsonstr = (JSONArray) new JSONParser().parse(convertStreamToString(new InputStreamReader(context.openFileInput(file_name))));
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
         return jsonstr;
