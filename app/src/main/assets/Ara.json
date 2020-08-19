@@ -1,0 +1,44 @@
+[
+  {
+    "number": "1",
+    "Complect": "Complect_1",
+    "GPU": "Palit GeForce GTX 1660",
+    "CPU": "AMD Ryzen 5 3600 BOX",
+    "motherboard": "ASUS PRIME B450M-K",
+    "RAM": "Kingston HyperX Predator 16gb",
+    "HDD": "WD Blue 1 terabyte",
+    "SSD": "WD Green 240 GB",
+    "Power Supply": "Chieftec ECO 600W"
+  },
+  {
+    "number": "0",
+    "Complect": "Complect_2",
+    "GPU": "GIGABYTE GeForce RTX 2060 Super",
+    "CPU": "Intel Core i5-10400F BOX",
+    "motherboard": "ASRock B460M-HDV",
+    "RAM": "Kingston HyperX Predator 16gb",
+    "SSD": "WD Green 1 terabyte",
+    "Power Supply": "Chieftec ECO 600W"
+  },
+  {
+    "number": "0",
+    "Complect": "Complect_3",
+    "GPU": "ASUS GeForce RTX 2080 Ti STRIX",
+    "CPU": "Intel Core i9-9900K",
+    "motherboard": "MSI Z390 MPG GAMING EDGE AC",
+    "CPU cooling": "Thermalright Silver Arrow IB-E Extreme Rev. B",
+    "RAM": "Kingston HyperX Predator 32gb",
+    "SSD": "WD Green 1 terabyte",
+    "Power Supply": "Seasonic Prime 850W "
+  },
+  {
+  "number": "1",
+  "Complect": "Complect_4",
+  "GPU":"KFA2 GeForce GTX 1650 EX",
+  "CPU":"AMD Ryzen 5 2600 BOX",
+  "motherboard":"MSI A320M-A PRO",
+  "RAM":"AMD Radeon R7 Performance Series 16gb",
+  "HDD":"WD Blue 1 terabyte",
+  "Power Supply":"Chieftec ECO 600W"
+  }
+]
