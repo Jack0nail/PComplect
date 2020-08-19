@@ -63,6 +63,7 @@ class Save_json {
     }
     public JSONArray readFile(Context context, String text_assets)
     {
+        String test1;
         JSONArray jsonstr = new JSONArray();
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(context.openFileInput("name")));
